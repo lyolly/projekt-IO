@@ -1,0 +1,25 @@
+﻿<Page x:Class="eDziennik.Pages.AddGradePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:eDziennik.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="423" d:DesignWidth="596"
+      Title="AddGradePage"
+      Background="White">
+
+    <Grid>
+        <Label Content="Wybierz ucznia:" HorizontalAlignment="Left" Margin="53,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.279,0.094"/>
+        <Label Content="Dodaj komentarz:" HorizontalAlignment="Left" Margin="42,215,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="151,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="345" Text="{Binding CommentTxt}"/>
+        <Label Content="Wybierz ocenę:" HorizontalAlignment="Left" Margin="55,168,0,0" VerticalAlignment="Top"/>
+        <Label Content="Wybierz kategorię:" HorizontalAlignment="Left" Margin="37,271,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="151,274,0,0" VerticalAlignment="Top" Width="345" ItemsSource="{Binding CategoriesCB }" SelectedItem="{Binding SelectedCategoryCB,  UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding SelectedCategoryIndex}"/>
+        <ListBox HorizontalAlignment="Left" Height="90" Margin="151,51,0,0" VerticalAlignment="Top" Width="345" ItemsSource="{Binding StudentList, Mode=TwoWay}" SelectedItem="{Binding SelectedStudent, Mode=TwoWay}"/>
+        <Button Content="Anuluj" HorizontalAlignment="Left" Margin="254,351,0,0" VerticalAlignment="Top" Width="75" Height="25" Command="{Binding CancelCmd}"/>
+        <Button Content="Strona główna" HorizontalAlignment="Left" Margin="442,351,0,0" VerticalAlignment="Top" Width="90" Height="25" Command="{Binding HomePageCmd}"/>
+        <ComboBox HorizontalAlignment="Left" Margin="151,168,0,0" VerticalAlignment="Top" Width="345" ItemsSource="{Binding GradesCB }" SelectedItem="{Binding SelectedGradeCB,  UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding SelectedGradeIndex}"/>
+        <Button Content="Dodaj ocenę" HorizontalAlignment="Left" Margin="151,351,0,0" VerticalAlignment="Top" Width="85" Height="25" Command="{Binding AddGradeCmd}"/>
+    </Grid>
+</Page>
